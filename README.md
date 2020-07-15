@@ -22,3 +22,7 @@ Afterwards enter the following command to build and install slock
 ## Running slock
 
 Simply invoke the 'slock' command. To get out of it, enter your password.
+
+## Applied Patches
+
+- [Terminalkeys](https://tools.suckless.org/slock/patches/terminalkeys/slock-terminalkeys-1.4.diff)
