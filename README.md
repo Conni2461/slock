@@ -22,3 +22,7 @@ Afterwards enter the following command to build and install slock
 ## Running slock
 
 Simply invoke the 'slock' command. To get out of it, enter your password.
+
+## Applied Patches
+
+- [Blurpixelatedscreen](https://tools.suckless.org/slock/patches/blur-pixelated-screen/slock-blur_pixelated_screen-1.4.diff)
