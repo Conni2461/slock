@@ -27,3 +27,4 @@ Simply invoke the 'slock' command. To get out of it, enter your password.
 
 - [Blurpixelatedscreen](https://tools.suckless.org/slock/patches/blur-pixelated-screen/slock-blur_pixelated_screen-1.4.diff)
 - [Message](https://tools.suckless.org/slock/patches/message/slock-message-20191002-b46028b.diff)
+- [Terminalkeys](https://tools.suckless.org/slock/patches/terminalkeys/slock-terminalkeys-1.4.diff)
