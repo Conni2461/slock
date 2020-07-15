@@ -1,0 +1,8 @@
+slock
+*.o
+*.orig
+*.rej
+tags
+
+.ccls-cache/
+.clangd/
