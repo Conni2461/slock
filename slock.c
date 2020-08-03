@@ -19,6 +19,7 @@
 #include <X11/keysym.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
+#include <X11/XF86keysym.h>
 #include <Imlib2.h>
 
 #include "arg.h"
@@ -268,11 +269,24 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
 					ksym = XK_Return;
 					break;
 				case XK_h:
-                                       ksym = XK_BackSpace;
+					ksym = XK_BackSpace;
 					break;
 				}
 			}
 			switch (ksym) {
+			case XF86XK_AudioPlay:
+			case XF86XK_AudioPause:
+			case XF86XK_AudioStop:
+			case XF86XK_AudioPrev:
+			case XF86XK_AudioNext:
+			case XF86XK_AudioRaiseVolume:
+			case XF86XK_AudioLowerVolume:
+			case XF86XK_AudioMute:
+			case XF86XK_AudioMicMute:
+			case XF86XK_MonBrightnessDown:
+			case XF86XK_MonBrightnessUp:
+				XSendEvent(dpy, DefaultRootWindow(dpy), True, KeyPressMask, &ev);
+				break;
 			case XK_Return:
 				passwd[len] = '\0';
 				errno = 0;
@@ -380,8 +394,8 @@ lockscreen(Display *dpy, struct xrandr *rr, int screen)
 	                          CopyFromParent,
 	                          DefaultVisual(dpy, lock->screen),
 	                          CWOverrideRedirect | CWBackPixel, &wa);
-    if(lock->bgmap)
-        XSetWindowBackgroundPixmap(dpy, lock->win, lock->bgmap);
+	if (lock->bgmap)
+		XSetWindowBackgroundPixmap(dpy, lock->win, lock->bgmap);
 	lock->pmap = XCreateBitmapFromData(dpy, lock->win, curs, 8, 8);
 	invisible = XCreatePixmapCursor(dpy, lock->pmap, lock->pmap,
 	                                &color, &color, 0, 0);
