@@ -26,3 +26,4 @@ Simply invoke the 'slock' command. To get out of it, enter your password.
 ## Applied Patches
 
 - [Terminalkeys](https://tools.suckless.org/slock/patches/terminalkeys/slock-terminalkeys-1.4.diff)
+- [Mediakeys](https://patch-diff.githubusercontent.com/raw/phenax/bslock/pull/1.diff)
